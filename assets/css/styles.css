@@ -69,7 +69,7 @@ a{
     font-weight: bold;
 }
 .title:after{
-    content:" Fruteria"
+    content:" Frutería by RSginer"
 }
 
 .header{}
@@ -237,7 +237,7 @@ a{
 }
 
 .cart-list__total-label{
-    font-size: 50px;
+    font-size: 40px;
     padding: 0px;
     margin-bottom: 0px;
     color:black;
@@ -245,7 +245,7 @@ a{
 .cart-list__total-price{
     float:right;
     color:black;
-    font-size: 50px;
+    font-size: 40px;
 }
 .cart-list__total-price:after{
     content:"€";
