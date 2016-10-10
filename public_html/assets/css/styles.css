@@ -12,23 +12,39 @@ and open the template in the editor.
 }
 html, body{
     font-family: Raleway, Arial, Helvetica, serif;
+    margin: 0;
 }
 
 .container{
     margin-left: auto;
+    margin-top: 0;
     margin-right: auto;
     position:relative;
-    width:1024px;
+    width:1124px;
 }
+
+.title{
+    text-align: center;
+    margin-bottom: 20px;
+    width:100%;
+    padding:10px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    font-weight: initial;
+    background-color: black;
+    color:white;
+}
+
 .cart{
     display: block;
-    padding:5px;
+    margin-top: 50px;
 }
 
 .cart__item{
     float: left;
     padding: 0px;
-    margin:0;
+    margin:10px;
     border:1px solid black;
     border-radius: 5px;
     width:335px;
@@ -52,6 +68,9 @@ html, body{
 
 .item__body__image{
      width:300px;
+     height: 300px;
+     border: 2px dashed #CCC;
+     margin:15px;
 }
 
 .item__footer{
@@ -65,7 +84,7 @@ html, body{
 }
 .item_footer_label{
     margin:0;
-    font-size: 12px;
+    font-size: 16px;
     
 }
 .item__footer__price{
@@ -74,9 +93,20 @@ html, body{
     font-size: 35px;
 }
 .item__footer__price:after{
-    content:" €/Kg";
+    content:" €";
     color:grey;
-    font-size: 14px;
+    font-size: 16px;
+}
+
+.cart-list{
+    padding:10px;
+    width: 400px;
+    border: 2px dashed #CCC;
+}
+
+.cart-list__item__image{
+    width:80px;
+    heigth:80px;
 }
 
 
