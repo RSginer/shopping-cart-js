@@ -15,6 +15,7 @@ html, body{
     margin: 0px;
     height: 100%;
     background-image: url("../img/fondo.jpg");
+    min-height: 1080px;
     
 }
 .credits{
@@ -24,11 +25,11 @@ html, body{
     background-color: rgba(0, 0, 0, 0.6);
     width:100%;
     bottom:0;
-    font-size: 20px;
+    font-size: 18px;
     color:white;
 }
 .credits > i{
-    font-size: 50px;
+    font-size: 25px;
     color:white;
 }
 
@@ -47,10 +48,9 @@ a{
     padding-bottom: 15px;
     margin-left: auto;
     border:2px solid black;
-    border-top:0px;
-    margin-top: 0px;
+    margin-top: 80px;
     margin-right: auto;
-    min-height: 800px;
+    min-height: 700px;
     width:1234px;
 }
 
@@ -58,9 +58,9 @@ a{
     margin-bottom: 0px;
     width:100%;
     padding:5px;
-    text-indent: 190px;
     margin-top: 0px;
     margin-left: 0px;
+    padding-left: 20px;
     margin-right: 0px;
     font-weight: initial;
     background-color: yellowgreen;
@@ -237,7 +237,7 @@ a{
 }
 
 .cart-list__total-label{
-    font-size: 30px;
+    font-size: 50px;
     padding: 0px;
     margin-bottom: 0px;
     color:black;
@@ -245,7 +245,7 @@ a{
 .cart-list__total-price{
     float:right;
     color:black;
-    font-size: 30px;
+    font-size: 50px;
 }
 .cart-list__total-price:after{
     content:"€";
