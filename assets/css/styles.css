@@ -117,8 +117,8 @@ a{
 }
 
 .item__body__image{
-     width:300px;
-     height: 300px;
+     width:180px;
+     height: 180px;
      margin:15px;
 }
 
@@ -216,7 +216,6 @@ a{
 }
 .cart-list__item__title > p > i[class="fa fa-trash"]{
   color:darkred;
-  text-indent: 110px;
 }
 .cart-list__item__info{
     width:195px;
