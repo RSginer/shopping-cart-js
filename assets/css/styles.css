@@ -114,7 +114,7 @@ body{
 .cart-list{
     display: block;
     padding:15px;
-    background-color:rgba(255,255,255,0.5);
+    background-color:rgba(255,255,255,0.7);
     border: 2px dashed green;
     width: 905px;
     float:left;
