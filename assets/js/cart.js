@@ -15,3 +15,11 @@ function addToCart(div){
     
     alert("Producto añadido");
 }
+
+function subProduct(div){
+    
+}
+
+function deleteProduct(div){
+    
+}
