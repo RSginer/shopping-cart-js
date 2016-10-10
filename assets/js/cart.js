@@ -8,6 +8,7 @@ function addToCart(div) {
     var img = div.firstChild.nextSibling.nextSibling.nextSibling.firstChild.nextSibling.src;
 
     if (!this.isInCart(id+ "-cart")) {
+        /* CREO EL ELEMENTO ITEM DE CARRITO*/
         var cartItem =
                 '<div class="cart-list__item__title">' +
                 '<p><b>' + name + '</b> <i class="fa fa-minus-square"></i><i class="fa fa-plus-square"></i><i class="fa fa-trash"></i></p>' +
@@ -23,21 +24,18 @@ function addToCart(div) {
         node.className = "cart-list__item";
         node.id = id + "-cart";
         node.innerHTML += cartItem;
+        /* LO INSERTO EN EL DIV DE CARRITO*/
         document.getElementById("cartList").insertBefore(node,document.getElementById("cartList").firstChild);
     }else{
         var nodeInCart = document.getElementById(id+"-cart");
-        var nodoUnidades = nodeInCart.lastChild.firstChild.nextSibling.firstChild.nextSibling.nextSibling.firstChild;
-        var unidades = parseInt(nodoUnidades.data);
-        
-        
-        unidades++;
-        nodoUnidades.data=unidades;
-        console.log(unidades);
+        var nodeQuantity = nodeInCart.lastChild.firstChild.nextSibling.firstChild.nextSibling.nextSibling.firstChild;
+        var quantity = parseInt(nodeQuantity.data);
+        quantity++;
+        nodeQuantity.data=quantity;
+        var nodePrice = nodeInCart.lastChild.lastChild.firstChild.nextSibling.nextSibling.firstChild;
+        var priceChanged = parseInt(quantity) * price;
+        nodePrice.data=parseInt(priceChanged); 
     }
-
-
-
-    console.log("El producto es:  ID=" + id + " NOMBRE=" + name + " PRECIO=" + price + " IMAGEN=" + img);
 }
 
 function subProduct(div) {
