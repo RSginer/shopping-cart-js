@@ -26,6 +26,13 @@ function addToCart(div) {
         document.getElementById("cartList").insertBefore(node,document.getElementById("cartList").firstChild);
     }else{
         var nodeInCart = document.getElementById(id+"-cart");
+        var nodoUnidades = nodeInCart.lastChild.firstChild.nextSibling.firstChild.nextSibling.nextSibling.firstChild;
+        var unidades = parseInt(nodoUnidades.data);
+        
+        
+        unidades++;
+        nodoUnidades.data=unidades;
+        console.log(unidades);
     }
 
 
