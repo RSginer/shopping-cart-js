@@ -12,35 +12,14 @@ and open the template in the editor.
 }
 html, body{
     font-family: Raleway, Arial, Helvetica, serif;
-    margin: 0px;
+}
+body{
     height: 100%;
     background-image: url("../img/fondo.jpg");
     min-height: 1080px;
-    
-}
-.credits{
-    padding:5px;
-    text-align: center;
-    position:fixed;
-    background-color: rgba(0, 0, 0, 0.6);
-    width:100%;
-    bottom:0;
-    font-size: 18px;
-    color:white;
-}
-.credits > i{
-    font-size: 25px;
-    color:white;
+    padding-top: 40px;
 }
 
-.credits > a{
-    text-decoration: none;
-    color:turquoise;
-}
-a{
-    text-decoration: none;
-    color:turquoise;
-}
 .container{
     background-color: white;
     padding:45px;
@@ -48,29 +27,11 @@ a{
     padding-bottom: 15px;
     margin-left: auto;
     border:2px solid black;
-    margin-top: 80px;
     margin-right: auto;
-    min-height: 700px;
+    height: 740px;
     width:1234px;
 }
 
-.title{
-    margin-bottom: 0px;
-    width:100%;
-    padding:5px;
-    margin-top: 0px;
-    margin-left: 0px;
-    padding-left: 20px;
-    margin-right: 0px;
-    font-weight: initial;
-    background-color: yellowgreen;
-    border-bottom: 2px solid darkgreen;
-    color:darkgreen;
-    font-weight: bold;
-}
-.title:after{
-    content:" Frutería by RSginer"
-}
 
 .header{
     text-align: center;
@@ -89,6 +50,7 @@ a{
 .product__item{
     float: left;
     padding: 0px;
+    height: auto;
     margin:15px;
     border:1px solid black;
     border-radius: 5px;
@@ -146,20 +108,27 @@ a{
     color:green;
     font-size: 16px;
 }
-
+.cart{
+    height: 400px;
+}
 .cart-list{
     padding:15px;
     background-color:white;
     border: 2px dashed green;
-    width: 100%;
+    width: 905px;
     position: relative;
     float:left;
+    min-height: 120px;
     margin-bottom: 15px;
-    margin-top: 50px;
     display: block;
     line-height: 0.5;
 }
-
+.icon-cart{
+    float:left;
+    font-size: 120px;
+    color:green;
+    margin-right: 50px;
+}
 .cart-list__cart-icon{
     width:290px;
     text-align: center;
@@ -231,18 +200,20 @@ a{
     content:"€";
 }
 
-.cart-list__total-label{
+.total-label{
     font-size: 40px;
     padding: 0px;
-    margin-bottom: 0px;
+    width: 100%;
+    position: relative;
+    float:left;
     color:black;
 }
-.cart-list__total-price{
+.total-label__price{
     float:right;
     color:black;
     font-size: 40px;
 }
-.cart-list__total-price:after{
+.total-label__price:after{
     content:"€";
     font-size:20px;
 }
