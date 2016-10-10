@@ -14,17 +14,14 @@ and open the template in the editor.
         <link rel="stylesheet" href="assets/css/styles.css"/>
     </head>
     <body>
-                    <h1 class="title">Mi fruteria <i class="fa fa-smile-o"></i></h1>
+        <h1 class="title"><i class="fa fa-smile-o"></i></h1>
         <div class="container">
-
-            <div class="cart-list">
-                <div class="cart-list__item">
-                    <img class="cart-list__item__image" src="assets/img/sandia.jpg"/>
-                </div>
-            </div>
-            <div id="item1" class="cart">
+            <p class="header__breadcrumbs">
+                Productos
+            </p>
+            <div class="products">
                 <!-- ARTICULO SANDIA -->
-                <div class="cart__item">
+                <div id="item1"  onclick="addItem(this)"  class="product__item">
                     <div class="item__header">
                         Sandia
                     </div>
@@ -36,8 +33,8 @@ and open the template in the editor.
                     </div>
                 </div>
                 <!-- ARTICULO NARANJAS -->
-                <div id="item2" class="cart">
-                    <div class="cart__item">
+                <div id="item2" class="cart" onclick="addItem(this)">
+                    <div class="product__item">
                         <div class="item__header">
                             Naranja
                         </div>
@@ -49,9 +46,9 @@ and open the template in the editor.
                         </div>
                     </div>
                 </div>
-                 <!-- ARTICULO POMELO -->
-                 <div id="item3" class="cart">
-                    <div class="cart__item">
+                <!-- ARTICULO POMELO -->
+                <div id="item3" class="product" onclick="addItem(this)">
+                    <div class="product__item">
                         <div class="item__header">
                             Pomelo
                         </div>
@@ -64,7 +61,25 @@ and open the template in the editor.
                     </div>
                 </div>
             </div>
+            <div class="cart">
+                <div class="cart-list">
+                    <div class="cart-list__cart-icon"><i class="fa fa-shopping-cart"></i><span class="label-cart"> <b>Carrito</b></span><br><span class="number-items-cart">1</span></div>
+                    <div class="cart-list__item">
+                        <div class="cart-list__item__title">
+                            <p><b>Sandia</b> <i class="fa fa-minus-square"></i><i class="fa fa-plus-square"></i><i class="fa fa-trash"></i></p>
+                        </div>
+                        <div class="cart-list__item__left">
+                            <img class="cart-list__item__image" src="assets/img/sandia.jpg"/>
+                        </div>
 
+                        <div class="cart-list__item__info">
+                            <p><b>Unidades:</b> <span class="cart-list__item__quantity">1</span></p>
+                            <p><b>Precio:</b> <span class="cart-list__item__price">2</span></p>
+                        </div>
+                    </div>
+                </div>
+                <h2 class="cart-list__total-label">Total<span class="cart-list__total-price">0</span></h2>
+            </div>
         </div>
         <script src="assets/js/cart.js"></script>
     </body>
