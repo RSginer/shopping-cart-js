@@ -1,0 +1,82 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10-oct-2016, 12:54:41
+    Author     : Rubén Soler
+*/
+*{
+    box-sizing: border-box;
+}
+html, body{
+    font-family: Raleway, Arial, Helvetica, serif;
+}
+
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    position:relative;
+    width:1024px;
+}
+.cart{
+    display: block;
+    padding:5px;
+}
+
+.cart__item{
+    float: left;
+    padding: 0px;
+    margin:0;
+    border:1px solid black;
+    border-radius: 5px;
+    width:335px;
+    cursor:pointer;
+}
+
+.item__header{
+    text-align: center;
+    font-size: 25px;
+    color:yellowgreen;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: black;
+    margin:0;
+}
+
+.item__body{
+     text-align: center;
+}
+
+.item__body__image{
+     width:300px;
+}
+
+.item__footer{
+    text-align: center;
+    font-size: 25px;
+    position: relative;
+    bottom:0;
+    color:white;
+    background-color: black;
+    margin:0;
+}
+.item_footer_label{
+    margin:0;
+    font-size: 12px;
+    
+}
+.item__footer__price{
+    color:yellowgreen;
+    margin-left: 10px;
+    font-size: 35px;
+}
+.item__footer__price:after{
+    content:" €/Kg";
+    color:grey;
+    font-size: 14px;
+}
+
+
