@@ -70,4 +70,5 @@ function updateTotal() {
         }
     }
     document.getElementById("total-price").innerHTML = totalPrice;
+    document.getElementById("cart-count-number").innerHTML = nodeListSize;
 }

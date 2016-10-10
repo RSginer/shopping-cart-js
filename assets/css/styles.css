@@ -30,7 +30,17 @@ body{
     height: 500px;
     width:1234px;
 }
-
+.cart-count{
+    background-color:rgba(0,100,0,0.5);
+    position:fixed;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color:white;
+    top:0px;
+    left:0px;
+    padding:10px;
+}
 .header{
     text-align: center;
     padding: 20px;
