@@ -4,9 +4,6 @@ function addToCart(div) {
     var name = div.firstChild.nextSibling.firstChild.data;
     var price = div.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.firstChild.nextSibling.firstChild.nextSibling.firstChild.data;
     var img = div.firstChild.nextSibling.nextSibling.nextSibling.firstChild.nextSibling.src;
-    
-    
-    
     var cartItem =
             '<div class="cart-list__item__title">' +
             '<p><b>'+ name + '</b> <i class="fa fa-minus-square"></i><i class="fa fa-plus-square"></i><i class="fa fa-trash"></i></p>' +
@@ -25,7 +22,7 @@ function addToCart(div) {
     document.getElementById("cartList").appendChild(node);
     
     
-    console.log("El producto es:  ID=" + id + " NOMBRE=" + nombre + " PRECIO=" + precio + " IMAGEN=" + img);
+    console.log("El producto es:  ID=" + id + " NOMBRE=" + name + " PRECIO=" + price + " IMAGEN=" + img);
 }
 
 function subProduct(div) {
@@ -38,4 +35,9 @@ function deleteProduct(div) {
 
 function addProduct(div) {
 
+}
+
+function isInCart(id){
+    
+    return false;
 }
