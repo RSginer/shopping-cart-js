@@ -1,7 +1,17 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+// MODELO DE DATOS
+//
+//var carrito = [
+//    {
+//      "id": "item1",
+//      "nombre": "Sandia",
+//      "precio": 2,
+//      "img": "assets/img/sandia.jpg"
+//    }
+//    
+//]
+var carrito = [];
 
-
+function addToCart(div){
+    
+    alert("Producto añadido");
+}

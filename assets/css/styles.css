@@ -221,7 +221,7 @@ a{
 }
 .cart-list__item__quantity{
     float:right;
-    margin-right: 20px;
+    margin-right: 24px;
 }
 .cart-list__item__price{
     float:right;
@@ -229,7 +229,6 @@ a{
 }
 .cart-list__item__price:after{
     content:"€";
-    font-size: 12px;
 }
 
 .cart-list__total-label{
