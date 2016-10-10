@@ -27,7 +27,7 @@ body{
     margin-left: auto;
     border:2px solid black;
     margin-right: auto;
-    height: 460px;
+    height: 500px;
     width:1234px;
 }
 
@@ -118,7 +118,7 @@ body{
     border: 2px dashed green;
     width: 905px;
     float:left;
-    min-height: 120px;
+    min-height: 145px;
     margin-bottom: 15px;
     display: block;
     margin-top:100px;

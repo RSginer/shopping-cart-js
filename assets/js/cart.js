@@ -1,13 +1,11 @@
-var total = 0;
-
 function addToCart(div) {
-    // Datos del producto
+    // DATOS DEL PRODUCTO
     var id = div.id;
     var name = div.firstChild.nextSibling.firstChild.data;
     var price = div.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.firstChild.nextSibling.firstChild.nextSibling.firstChild.data;
     var img = div.firstChild.nextSibling.nextSibling.nextSibling.firstChild.nextSibling.src;
 
-    if (!this.isInCart(id+ "-cart")) {
+    if (!this.isInCart(id + "-cart")) {
         /* CREO EL ELEMENTO ITEM DE CARRITO*/
         var cartItem =
                 '<div class="cart-list__item__title">' +
@@ -25,16 +23,18 @@ function addToCart(div) {
         node.id = id + "-cart";
         node.innerHTML += cartItem;
         /* LO INSERTO EN EL DIV DE CARRITO*/
-        document.getElementById("cartList").insertBefore(node,document.getElementById("cartList").firstChild);
-    }else{
-        var nodeInCart = document.getElementById(id+"-cart");
+        document.getElementById("cart-list").insertBefore(node, document.getElementById("cart-list").firstChild);
+        updateTotal();
+    } else {
+        var nodeInCart = document.getElementById(id + "-cart");
         var nodeQuantity = nodeInCart.lastChild.firstChild.nextSibling.firstChild.nextSibling.nextSibling.firstChild;
         var quantity = parseInt(nodeQuantity.data);
         quantity++;
-        nodeQuantity.data=quantity;
+        nodeQuantity.data = quantity;
         var nodePrice = nodeInCart.lastChild.lastChild.firstChild.nextSibling.nextSibling.firstChild;
         var priceChanged = parseInt(quantity) * price;
-        nodePrice.data=parseInt(priceChanged); 
+        nodePrice.data = parseInt(priceChanged);
+        updateTotal();
     }
 }
 
@@ -51,9 +51,23 @@ function addProduct(div) {
 }
 
 function isInCart(id) {
-    if (document.getElementById(id)===null) {
+    if (document.getElementById(id) === null) {
         return false;
-    }else{
+    } else {
         return true;
     }
+}
+
+function updateTotal() {
+    var nodeListSize = document.getElementById("cart-list").childNodes.length;
+    var totalPrice = 0;
+    for (var i = 0; i < nodeListSize; i++) {
+        var nodeInCart = document.getElementById("item" + i + "-cart");
+        if (nodeInCart != null) {
+            var nodePrice = nodeInCart.lastChild.lastChild.lastChild.firstChild.data;
+            console.log(nodePrice);
+            totalPrice += parseInt(nodePrice);
+        }
+    }
+    document.getElementById("total-price").innerHTML = totalPrice;
 }
