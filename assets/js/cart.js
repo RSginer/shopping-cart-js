@@ -46,7 +46,7 @@ function addProduct(div) {
 }
 
 function isInCart(id) {
-    if (document.getElementById(id)==null) {
+    if (document.getElementById(id)===null) {
         return false;
     }else{
         return true;
