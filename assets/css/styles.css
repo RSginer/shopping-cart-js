@@ -72,11 +72,9 @@ a{
     content:" Frutería by RSginer"
 }
 
-.header{}
-
-.header__breadcrumbs{
+.header{
     text-align: center;
-    padding: 10px;
+    padding: 20px;
     margin:0;
     font-size:30px;
     font-weight: bold;
@@ -86,7 +84,6 @@ a{
 
 .products{
     display: block;
-    margin-top: 20px;
 }
 
 .product__item{
@@ -168,7 +165,7 @@ a{
     text-align: center;
     vertical-align: middle;
     height: 100px;
-    font-size: 35px;
+    font-size: 45px;
     float: left;
     color:#EEE;
 }
@@ -209,7 +206,7 @@ a{
     margin-bottom: 0;
 }
 .cart-list__item__title > p > i{
-   font-size: 14px;
+   font-size: 18px;
    float:right;
    cursor:pointer;
    margin-right: 15px;
