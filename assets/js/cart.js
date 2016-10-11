@@ -64,6 +64,8 @@ function deleteProduct(div) {
     var cartList = document.getElementById("cart-list");
     var item = div.parentNode.parentNode.parentNode;
     console.log(item);
+    var quantity = item.getElementsByTagName("p")[1].lastChild.firstChild.data;
+    this.cartCount -=quantity-1;
     var price = item.getElementsByTagName("p")[2].lastChild.firstChild.data;
     cartList.removeChild(item);
     this.updateTotal(-parseInt(price));
