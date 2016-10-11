@@ -51,7 +51,7 @@ function subProduct(div) {
     var quantity = parseInt(nodeQuantity.data);
     quantity--;
     if (quantity === 0) {
-        document.getElementById(item.id).firstChild;
+        this.deleteProduct(div);
     } else {
         nodeQuantity.data = quantity;
         var priceChanged = parseInt(quantity) * price;
@@ -63,6 +63,7 @@ function subProduct(div) {
 function deleteProduct(div) {
     var cartList = document.getElementById("cart-list");
     var item = div.parentNode.parentNode.parentNode;
+    console.log(item);
     var price = item.getElementsByTagName("p")[2].lastChild.firstChild.data;
     cartList.removeChild(item);
     this.updateTotal(-parseInt(price));
