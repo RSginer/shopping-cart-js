@@ -11,7 +11,7 @@ function addToCart(div) {
         /* CREO EL ELEMENTO ITEM DE CARRITO*/
         var cartItem =
                 '<div class="cart-list__item__title">' +
-                '<p><b>' + name + '</b> <i class="fa fa-minus-square"></i><i class="fa fa-plus-square"></i><i class="fa fa-trash" onclick="deleteProduct(this)"></i></p>' +
+                '<p><b>' + name + '</b> <i onclick="subProduct(this)" class="fa fa-minus-square"></i><i onclick="addProduct(this)" class="fa fa-plus-square"></i><i class="fa fa-trash" onclick="deleteProduct(this)"></i></p>' +
                 '</div>' +
                 ' <div class="cart-list__item__left">' +
                 ' <img class="cart-list__item__image" src="' + img + '"/>' +
@@ -41,20 +41,47 @@ function addToCart(div) {
 }
 
 function subProduct(div) {
-
+    var item = div.parentNode.parentNode.parentNode;
+    var idProduct = item.id.toString().split("-")[0];
+    var product = document.getElementById(idProduct);
+    var price = product.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.firstChild.nextSibling.firstChild.nextSibling.firstChild.data;
+    var id = item.id;
+    var nodePrice = item.getElementsByTagName("p")[2].lastChild.firstChild;
+    var nodeQuantity = item.getElementsByTagName("p")[1].lastChild.firstChild;
+    var quantity = parseInt(nodeQuantity.data);
+    quantity--;
+    if (quantity === 0) {
+        document.getElementById(item.id).firstChild;
+    } else {
+        nodeQuantity.data = quantity;
+        var priceChanged = parseInt(quantity) * price;
+        nodePrice.data = parseInt(priceChanged);
+        this.updateTotal(-price);
+    }
 }
 
 function deleteProduct(div) {
-var cartList=document.getElementById("cart-list");
-var item = div.parentNode.parentNode.parentNode;
-var price = div.parentNode.parentNode.parentNode.getElementsByTagName("p")[2].lastChild.firstChild.data;
-console.log(price);
-cartList.removeChild(div.parentNode.parentNode.parentNode);
-this.updateTotal(-parseInt(price));
+    var cartList = document.getElementById("cart-list");
+    var item = div.parentNode.parentNode.parentNode;
+    var price = item.getElementsByTagName("p")[2].lastChild.firstChild.data;
+    cartList.removeChild(item);
+    this.updateTotal(-parseInt(price));
 }
 
 function addProduct(div) {
-
+    var item = div.parentNode.parentNode.parentNode;
+    var idProduct = item.id.toString().split("-")[0];
+    var product = document.getElementById(idProduct);
+    var price = product.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.firstChild.nextSibling.firstChild.nextSibling.firstChild.data;
+    var id = item.id;
+    var nodePrice = item.getElementsByTagName("p")[2].lastChild.firstChild;
+    var nodeQuantity = item.getElementsByTagName("p")[1].lastChild.firstChild;
+    var quantity = parseInt(nodeQuantity.data);
+    quantity++;
+    nodeQuantity.data = quantity;
+    var priceChanged = parseInt(quantity) * price;
+    nodePrice.data = parseInt(priceChanged);
+    this.updateTotal(price);
 }
 
 function isInCart(id) {
@@ -66,8 +93,13 @@ function isInCart(id) {
 }
 
 function updateTotal(price) {
-    this.totalPrice+=parseInt(price);
-    this.cartCount+=1;
+    this.totalPrice += parseInt(price);
+    if (price>0) {
+            this.cartCount += 1;
+    }else{
+            this.cartCount -= 1;
+    }
+
     document.getElementById("total-price").innerHTML = this.totalPrice;
     document.getElementById("cart-count-number").innerHTML = this.cartCount;
 }
