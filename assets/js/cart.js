@@ -65,7 +65,7 @@ function deleteProduct(div) {
     var item = div.parentNode.parentNode.parentNode;
     console.log(item);
     var quantity = item.getElementsByTagName("p")[1].lastChild.firstChild.data;
-    this.cartCount -=quantity-1;
+    this.cartCount -= quantity - 1;
     var price = item.getElementsByTagName("p")[2].lastChild.firstChild.data;
     cartList.removeChild(item);
     this.updateTotal(-parseInt(price));
@@ -97,12 +97,11 @@ function isInCart(id) {
 
 function updateTotal(price) {
     this.totalPrice += parseInt(price);
-    if (price>0) {
-            this.cartCount += 1;
-    }else{
-            this.cartCount -= 1;
+    if (price > 0) {
+        this.cartCount += 1;
+    } else {
+        this.cartCount -= 1;
     }
-
     document.getElementById("total-price").innerHTML = this.totalPrice;
     document.getElementById("cart-count-number").innerHTML = this.cartCount;
 }
