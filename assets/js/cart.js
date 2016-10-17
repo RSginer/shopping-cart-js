@@ -6,7 +6,10 @@ function addToCart(div) {
     var name = div.firstChild.nextSibling.firstChild.data;
     var price = div.firstChild.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.firstChild.nextSibling.firstChild.nextSibling.firstChild.data;
     var img = div.firstChild.nextSibling.nextSibling.nextSibling.firstChild.nextSibling.src;
-
+/*
+ * 
+ * compruebo si el producto ya existe en el carrito
+ */
     if (!this.isInCart(id + "-cart")) {
         /* CREO EL ELEMENTO ITEM DE CARRITO*/
         var cartItem =
@@ -28,6 +31,10 @@ function addToCart(div) {
         document.getElementById("cart-list").insertBefore(node, document.getElementById("cart-list").firstChild);
         this.updateTotal(price);
     } else {
+        
+        /* Si ya existia el elemento en el carrito aumento la cantidad y actualizo el precio total
+         * 
+         */
         var nodeInCart = document.getElementById(id + "-cart");
         var nodeQuantity = nodeInCart.getElementsByTagName("p")[1].lastChild.firstChild;
         var quantity = parseInt(nodeQuantity.data);
@@ -40,6 +47,13 @@ function addToCart(div) {
     }
 }
 
+/*
+ * 
+ * @param {node} div la capa del item
+ * 
+ * Le paso por parametro la capa del icono y luego recupero la capa del item completo para buscar
+ * las unidades y restar 1
+ */
 function subProduct(div) {
     var item = div.parentNode.parentNode.parentNode;
     var idProduct = item.id.toString().split("-")[0];
@@ -59,7 +73,9 @@ function subProduct(div) {
         this.updateTotal(-price);
     }
 }
-
+/* Elimino el elemento del carrito
+ * 
+ */
 function deleteProduct(div) {
     var cartList = document.getElementById("cart-list");
     var item = div.parentNode.parentNode.parentNode;
@@ -71,7 +87,13 @@ function deleteProduct(div) {
     setTimeout(function(){cartList.removeChild(item);},2000);
     this.updateTotal(-parseInt(price));
 }
-
+/*
+ * 
+ * @param {node} div
+ * Le paso por parametro la capa del icono y luego recupero la capa del item completo para buscar
+ * las unidades y sumar 1
+ * 
+ */
 function addProduct(div) {
     var item = div.parentNode.parentNode.parentNode;
     var idProduct = item.id.toString().split("-")[0];
@@ -88,6 +110,14 @@ function addProduct(div) {
     this.updateTotal(price);
 }
 
+/*
+ * 
+ * @param {string} id 
+ * @returns {boolean}
+ * 
+ * Devuelve true cuando el producto esta en el carrito o false si no está
+ * 
+ */
 function isInCart(id) {
     if (document.getElementById(id) === null) {
         return false;
@@ -96,6 +126,9 @@ function isInCart(id) {
     }
 }
 
+/* Actualizo el precio total
+ * 
+ */
 function updateTotal(price) {
     this.totalPrice += parseInt(price);
     if (price > 0) {
