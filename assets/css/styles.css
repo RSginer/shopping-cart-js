@@ -146,7 +146,16 @@ body{
     to{opacity:1;transform:rotateX(5deg)}
 }
 
+.cart-list__item--hide{
+    animation-name: cartanimhide;
+    animation-duration: 2s;
+    opacity:0;
+}
 
+@keyframes cartanimhide{
+    from{opacity:1;transform:rotateX(5deg)}
+    to{opacity:0;transform:rotateX(90deg)}
+}
 .cart-list__item__left{
     width:80px;
     text-align: center;
