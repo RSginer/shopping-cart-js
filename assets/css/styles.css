@@ -10,6 +10,7 @@ and open the template in the editor.
 *{
     box-sizing: border-box;
 }
+
 html, body{
     font-family: Raleway, Arial, Helvetica, serif;
 }
@@ -128,14 +129,24 @@ body{
     margin-right: 110px;
 }
 
+
 .cart-list__item{
     height: 100px;
     float:left;
     margin:5px;
+    animation-name: cartanim;
+    animation-duration: 2s;
     background-color: white;
     border: 1px solid black;
     width:280px;
 }
+
+@keyframes cartanim{
+    from{opacity:0;transform:rotateX(90deg)}
+    to{opacity:1;transform:rotateX(5deg)}
+}
+
+
 .cart-list__item__left{
     width:80px;
     text-align: center;
@@ -205,6 +216,7 @@ body{
     content:"€";
     font-size:20px;
 }
+
 .label-cart{
     position:relative;
     top:-50px;
